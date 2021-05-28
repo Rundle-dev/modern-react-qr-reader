@@ -279,8 +279,8 @@ module.exports = class Reader extends Component {
   }
   handleWorkerMessage(e) {
     const { onScan, legacyMode, delay } = this.props
-    if (e.data || e.binaryData) {
-      onScan({data: e.data, binaryData: e.binaryData})
+    if (e.data) {
+      onScan({data: e.data.data, binaryData: e.data.binaryData})
     } else {
       onScan(null)
     }
